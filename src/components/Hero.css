@@ -1,0 +1,359 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 80px;
+}
+
+/* Floating Doodles */
+.doodle {
+  position: absolute;
+  font-size: 2rem;
+  z-index: 1;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.doodle-1 {
+  top: 15%;
+  left: 10%;
+  color: var(--doodle-yellow);
+}
+
+.doodle-2 {
+  top: 25%;
+  right: 15%;
+  color: var(--doodle-pink);
+}
+
+.doodle-3 {
+  top: 60%;
+  left: 5%;
+  color: var(--doodle-blue);
+}
+
+.doodle-4 {
+  top: 70%;
+  right: 10%;
+  color: var(--doodle-green);
+}
+
+.doodle-5 {
+  top: 40%;
+  left: 20%;
+  color: var(--doodle-purple);
+}
+
+.doodle-6 {
+  top: 80%;
+  right: 25%;
+  color: var(--doodle-orange);
+}
+
+/* Hero Content */
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text {
+  max-width: 600px;
+}
+
+.hero-greeting {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.hero-title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.hero-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.hero-social .social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.hero-social .social-link:hover {
+  background: var(--text-accent);
+  color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* Hero Visual */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-avatar {
+  position: relative;
+}
+
+.avatar-circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.3);
+}
+
+.avatar-content {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid var(--bg-primary);
+}
+
+.avatar-emoji {
+  font-size: 6rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+.avatar-glow {
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+  opacity: 0.3;
+  filter: blur(20px);
+  z-index: -1;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0.5;
+    transform: scale(1.05);
+  }
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  color: var(--text-accent);
+}
+
+.scroll-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.scroll-indicator:hover .scroll-arrow {
+  background: var(--text-accent);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.scroll-indicator span {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+  
+  .hero-text {
+    max-width: 100%;
+  }
+  
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .avatar-circle {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .avatar-content {
+    width: 230px;
+    height: 230px;
+  }
+  
+  .avatar-emoji {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 100px;
+    min-height: 90vh;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+  }
+  
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .hero-social {
+    justify-content: center;
+  }
+  
+  .avatar-circle {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .avatar-content {
+    width: 180px;
+    height: 180px;
+  }
+  
+  .avatar-emoji {
+    font-size: 4rem;
+  }
+  
+  .doodle {
+    font-size: 1.5rem;
+  }
+  
+  .doodle-1 { top: 10%; left: 5%; }
+  .doodle-2 { top: 15%; right: 5%; }
+  .doodle-3 { top: 50%; left: 2%; }
+  .doodle-4 { top: 60%; right: 5%; }
+  .doodle-5 { top: 30%; left: 10%; }
+  .doodle-6 { top: 70%; right: 15%; }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 250px;
+    justify-content: center;
+  }
+  
+  .avatar-circle {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .avatar-content {
+    width: 130px;
+    height: 130px;
+  }
+  
+  .avatar-emoji {
+    font-size: 3rem;
+  }
+  
+  .doodle {
+    font-size: 1.25rem;
+  }
+} 
